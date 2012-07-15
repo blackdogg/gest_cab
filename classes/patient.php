@@ -4,6 +4,10 @@ class Patient{
 	private $nom;
 	private $prenom;
 	private $date_naiss;
+	private $adresse;
+	private $num_tel;
+	private $aicdf;
+	private $aicdp;
 	private $sf;
 	private $sp;
 	
