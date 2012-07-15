@@ -1,10 +1,27 @@
 <?php
 class Patient{
+	private $idpatient;
 	private $nom;
 	private $prenom;
 	private $date_naiss;
 	private $sf;
 	private $sp;
+	
+	public function __construct($nom, $prenom, $dt, $sf, $sp){
+		$this->nom = $nom;
+		$this->prenom = $prenom;
+		$this->date_naiss = $dt;
+		$this->sf = $sf;
+		$this->sp = $sp;
+	}
+	
+	public function setId($id){
+		$this->idpatient = $id;
+	}
+	
+	public function getId(){
+		return $this->idpatient;
+	}
 	
 	public function setNom($nom){
 		$this->nom = $nom;
@@ -22,7 +39,7 @@ class Patient{
 		return $this->prenom;
 	}
 	
-	public function setDateNiass($dt){
+	public function setDateNaiss($dt){
 		$this->date_naiss = $dt;
 	}
 	
