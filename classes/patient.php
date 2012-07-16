@@ -66,5 +66,21 @@ class Patient{
 	public function getSp(){
 		return $this->sp;
 	}
+	
+	public function setAicdF($aicd){
+		$this->aicdf = $aicd;
+	}
+	
+	public function getAicdF(){
+		return $this->aicdf;
+	}
+	
+	public function setAicdP($aicd){
+		$this->aicdp = $aicd;
+	}
+	
+	public function getAicdP(){
+		return $this->aicdp;
+	}
 }
 ?>
