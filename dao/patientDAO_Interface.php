@@ -1,9 +1,9 @@
 <?php
-	include('../classes/patient.php');
+	include('classes/patient.php');
 	
     interface PatientDAO{
     	public function persistPatient(Patient $p);
-    	public function getPatients();
+    	public function getPatientList();
 		public function getPatient($id);
 		//public function getPatient($nom);
 		public function getPatientRDV($id);

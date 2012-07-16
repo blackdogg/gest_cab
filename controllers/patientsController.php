@@ -1,7 +1,7 @@
 <?php
 require_once('dao/patientDAO_Impl.php');
 
-class PatientController{
+class patientsController{
 	private $action;
 	private $dao;
 	public function __construct(){
@@ -10,10 +10,13 @@ class PatientController{
 	}
 	
 	public function process(){
+		echo 'process';
 		if(isset($_GET['action'])){
 			$this->action = $_GET['action'];
 			switch($this->action){
 				case 'list':
+					$patients = $this->dao->getPatientList();
+					$this->loadView('patient_detail');
 					break;
 				case 'add':
 					break;

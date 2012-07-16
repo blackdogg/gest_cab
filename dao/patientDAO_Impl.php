@@ -1,6 +1,6 @@
 <?php
-    require_once('patientDAO_Interface.php');
-	require_once('../db.php');
+    require_once('dao/patientDAO_Interface.php');
+	require_once('db.php');
 	
 	class PatientDAO_Impl implements PatientDAO{
 		public function persistPatient(Patient $p){
@@ -15,6 +15,12 @@
 			$patient = new Patient($result['nom'], $result['prenom'], $result['date_naissance'], $result['sf'], $result['sp']);
 			$patient->setId($result['idpatient']);
 			return $patient;
+		}
+		
+		public function getPatientList(){
+			$list = $db->query("SELECT * FROM patient");
+			$patients = $list->fetchAll(PDO::FETCH_ASSOC);
+			return $patients;
 		}
 		
 		public function getPatientRDV($is){
