@@ -1,6 +1,7 @@
 <?php
     require_once('patientDAO_Interface.php');
 	require_once('../db.php');
+	
 	class PatientDAO_Impl implements PatientDAO{
 		public function persistPatient(Patient $p){
 			$persist = $db->prepare("INSERT INTO `patient`(`nom`, `prenom`, `date_naissance`, `sf`, `sp`) VALUES (?,?,?,?,?)");

@@ -10,8 +10,10 @@
 	</head>
 
 	<body>
-		<?php 
-			
+		<?php
+			require_once 'controllers/main.php';
+			$controller = new Main();
+			$controller->process();
 		?>
 	</body>
 </html>
