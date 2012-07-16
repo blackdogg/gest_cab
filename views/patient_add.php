@@ -1,0 +1,1 @@
+<h2>Ajout d'un patient</h2>

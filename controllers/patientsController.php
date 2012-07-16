@@ -12,7 +12,6 @@ class patientsController{
 	}
 		
 	public function process(){
-		echo 'process';
 		if(isset($_GET['action'])){
 			$this->action = $_GET['action'];
 			switch($this->action){
@@ -21,6 +20,7 @@ class patientsController{
 					$this->loadView('patients');
 					break;
 				case 'add':
+					$this->loadView('patient_add');
 					break;
 				case 'del':
 					break;
