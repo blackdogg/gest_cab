@@ -11,8 +11,9 @@
 
 	<body>
 		<?php
+			include('db.php');
 			require_once 'controllers/main.php';
-			$controller = new Main();
+			$controller = new Main($db);
 			$controller->process();
 		?>
 	</body>

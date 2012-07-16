@@ -4,11 +4,13 @@ require_once('dao/patientDAO_Impl.php');
 class patientsController{
 	private $action;
 	private $dao;
-	public function __construct(){
+	private $db;
+	public function __construct($db){
+		$this->db = $db;
 		$this->action = 'list';
-		$dao = new PatientDAO_Impl();
+		$this->dao = new PatientDAO_Impl($this->db);
 	}
-	
+		
 	public function process(){
 		echo 'process';
 		if(isset($_GET['action'])){
@@ -16,7 +18,7 @@ class patientsController{
 			switch($this->action){
 				case 'list':
 					$patients = $this->dao->getPatientList();
-					$this->loadView('patient_detail');
+					$this->loadView('patients');
 					break;
 				case 'add':
 					break;

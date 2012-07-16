@@ -1,8 +1,8 @@
 <?php
-    $host = "";
+    $host = "localhost";
 	$port = "3306";
-	$database = "";
-	$username = "";
+	$database = "cabinet_med";
+	$username = "root";
 	$password = "";
 	
 	try{
