@@ -1,0 +1,18 @@
+form{
+	width: 860px;
+	margin: 0 auto;
+	border: solid grey 1px;
+	padding: 15px;
+}
+
+form label{
+	margin-bottom: 10px;
+	display: inline-block;
+	width: 200px;
+	text-align: right;
+}
+
+form input[type="text"], input[type="date"] {
+	margin-bottom: 10px;
+	width: 180px;
+}

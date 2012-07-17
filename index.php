@@ -6,16 +6,34 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Cabinet Medical</title>
 		<meta name="author" content="nvtech" />
+
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<link rel="stylesheet" type="text/css" href="css/btns.css" />
+		<link rel="stylesheet" type="text/css" href="css/forms.css" />
 		<!-- Date: 2012-07-16 -->
 	</head>
 
 	<body>
-		<?php
-			include('db.php');
+		<div id="header">
+			&nbsp;
+			<div class="clear"></div>
+		</div>
+
+		<div id="contentWrap">
+			<?php
+			include ('db.php');
 			require_once 'controllers/main.php';
 			$controller = new Main($db);
-			$controller->process();
-		?>
+			$controller -> process();
+			?>
+			<div class="clear"></div>
+		</div>
+
+		<div id="footer">
+			&nbsp;
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
 	</body>
 </html>
 

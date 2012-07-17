@@ -1,0 +1,13 @@
+#panel{
+	width: 800px;
+	margin: 0 auto;
+	margin: 0;
+	padding: 10px;
+}
+
+.main_btn{
+	float: left;
+	width: 120px;
+	height: 50px;
+	border: solid black 1px;
+}

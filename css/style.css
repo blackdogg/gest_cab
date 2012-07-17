@@ -1,0 +1,27 @@
+body{
+	margin: 0;
+	padding: 0;
+}
+
+#header{
+	margin: 0 auto;
+	width: 960px;
+	background: #cacaca;
+}
+
+#contentWrap{
+	margin: 0 auto;
+	width: 960px;
+	background: #cce6ff;
+}
+
+#footer{
+	margin: 0 auto;
+	width: 960px;
+	background: #ffd9d9;
+}
+
+.clear{
+	zoom: 1;
+	clear: both;
+}

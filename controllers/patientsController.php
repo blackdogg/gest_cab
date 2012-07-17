@@ -17,10 +17,10 @@ class patientsController{
 			switch($this->action){
 				case 'list':
 					$patients = $this->dao->getPatientList();
-					$this->loadView('patients');
+					$this->loadView('patients',$patients);
 					break;
 				case 'add':
-					$this->loadView('patient_add');
+					$this->loadView('patient_add',NULL);
 					break;
 				case 'del':
 					break;
@@ -34,8 +34,9 @@ class patientsController{
 		}
 	}
 	
-	public function loadView($v){
+	public function loadView($v,$data){
 		$view = 'views/'.$v.'.php';
+		$patients = $data;
 		include($view);
 	}
 }
