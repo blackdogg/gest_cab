@@ -2,7 +2,7 @@
 	include('classes/patient.php');
 	
     interface PatientDAO{
-    	public function persistPatient(Patient $p);
+    	public function persistPatient($p);
     	public function getPatientList();
 		public function getPatient($id);
 		//public function getPatient($nom);

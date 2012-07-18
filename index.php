@@ -23,7 +23,7 @@
 			<?php
 			include ('db.php');
 			require_once 'controllers/main.php';
-			$controller = new Main($db);
+			$controller = new Main();
 			$controller -> process();
 			?>
 			<div class="clear"></div>

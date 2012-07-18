@@ -1,4 +1,3 @@
-<h2>Liste des patients</h2>
 
 <div>
 	<table id="list">
@@ -9,11 +8,11 @@
 		
 		<tbody>
 			<?php
-				foreach ($patients as $patient) {
+				foreach ($patients as $key => $patient) {
 			?>
 			<tr>
-				<td><?php echo $patient['nom']; ?></td>
-				<td><?php echo $patient['prenom']; ?></td>
+				<td><?php echo $patients[$key]['nom']; ?></td>
+				<td><?php echo $patients[$key]['prenom']; ?></td>
 			</tr>
 			<?php
 				}

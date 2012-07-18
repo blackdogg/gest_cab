@@ -1,43 +1,43 @@
 <?php
-require_once('dao/patientDAO_Impl.php');
+require_once ('dao/patientDAO_Impl.php');
 
-class patientsController{
+class patientsController {
 	private $action;
 	private $dao;
-	private $db;
-	public function __construct($db){
-		$this->db = $db;
-		$this->action = 'list';
-		$this->dao = new PatientDAO_Impl($this->db);
+
+	public function __construct() {
+		$this -> action = 'list';
+		$this -> dao = new PatientDAO_Impl();
 	}
-		
-	public function process(){
-		if(isset($_GET['action'])){
-			$this->action = $_GET['action'];
-			switch($this->action){
-				case 'list':
-					$patients = $this->dao->getPatientList();
-					$this->loadView('patients',$patients);
+
+	public function process() {
+		if (isset($_GET['action'])) {
+			$this -> action = $_GET['action'];
+			switch($this->action) {
+				case 'list' :
+					$patients = $this -> dao -> getPatientList();
+					$this -> loadView('patients', $patients);
 					break;
-				case 'add':
-					$this->loadView('patient_add',NULL);
+				case 'add' :
+					$this -> loadView('patient_add', NULL);
 					break;
-				case 'del':
+				case 'del' :
 					break;
-				case 'search':
+				case 'search' :
 					break;
-				default:
-					$this->action='list';
+				default :
+					$this -> action = 'list';
 			}
-		}else{
-			
+		} else {
+
 		}
 	}
-	
-	public function loadView($v,$data){
-		$view = 'views/'.$v.'.php';
+
+	public function loadView($v, $data) {
+		$view = 'views/' . $v . '.php';
 		$patients = $data;
-		include($view);
+		include ($view);
 	}
+
 }
 ?>

@@ -3,14 +3,21 @@ body{
 	padding: 0;
 }
 
+h2{
+	margin: 0;
+	padding: 0;
+}
+
 #header{
 	margin: 0 auto;
 	width: 960px;
+	height: 100px;
 	background: #cacaca;
 }
 
 #contentWrap{
 	margin: 0 auto;
+	padding: 0;
 	width: 960px;
 	background: #cce6ff;
 }

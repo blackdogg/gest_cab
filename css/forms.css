@@ -16,3 +16,9 @@ form input[type="text"], input[type="date"] {
 	margin-bottom: 10px;
 	width: 180px;
 }
+
+.form_ctrl{
+	text-align: center;
+	width: 300px;
+	margin: 15px auto;
+}
