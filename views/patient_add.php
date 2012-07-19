@@ -12,7 +12,7 @@
 		<input type="text" name="pren" id="pren" />
 
 		<label for="dt_naiss">Date de naissance :</label>
-		<input type="date" name="dt_naiss" id="dt_naiss" />
+		<input type="text" name="dt_naiss" id="dt_naiss" />
 
 		<label for="addr">Adresse :</label>
 		<input type="text" name="addr" id="addr" />
@@ -46,7 +46,7 @@
 
 <script type="text/javascript">	
 	$(document).ready(function(){		
-		$("#dt_naiss").datepicker({ dateFormat: "yy-mm-dd" });
+		$("#dt_naiss").datepicker({ dateFormat: 'yy-mm-dd' });
 	});	
 </script>
 
