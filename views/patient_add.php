@@ -44,18 +44,16 @@
 	</div>
 </form>
 
+<script type="text/javascript">	
+	$(document).ready(function(){
+		$( "#dt_naiss" ).datepicker( "option", "dateFormat", "yyyy-mm-dd" );
+		$("#dt_naiss").datepicker();
+	});	
+</script>
+
 <?php
 if (isset($_POST['valider'])) {
-	//$aicdf = $_POST['aicdf'] ? $_POST['aicdf'] : '';
-
 	$patient = new Patient($_POST['nom'], $_POST['pren'], $_POST['dt_naiss'], $_POST['addr'], $_POST['sf'], $_POST['sp'], $_POST['aicdf'], $_POST['aicdp'], $_POST['tel']);
-
-	echo $patient -> getNom() . "
-<br>
-" . $patient -> getPrenom() . "
-<br>
-" . $patient -> getTel();
-
 	$patientDAO = new PatientDAO_Impl();
 	$patientDAO -> persistPatient($patient);
 }

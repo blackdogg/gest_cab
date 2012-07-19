@@ -10,6 +10,10 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/btns.css" />
 		<link rel="stylesheet" type="text/css" href="css/forms.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.21.custom.css" />
+
+		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-1.8.21.custom.js"></script>
 		<!-- Date: 2012-07-16 -->
 	</head>
 
@@ -34,6 +38,9 @@
 			<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
+		<script type="text/javascript">
+			$.datepicker.setDefaults($.datepicker.regional['fr']);
+		</script>
 	</body>
 </html>
 
