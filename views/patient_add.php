@@ -45,9 +45,8 @@
 </form>
 
 <script type="text/javascript">	
-	$(document).ready(function(){
-		$( "#dt_naiss" ).datepicker( "option", "dateFormat", "yyyy-mm-dd" );
-		$("#dt_naiss").datepicker();
+	$(document).ready(function(){		
+		$("#dt_naiss").datepicker({ dateFormat: "yy-mm-dd" });
 	});	
 </script>
 
