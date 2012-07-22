@@ -22,6 +22,7 @@ class patientsController {
 					$this -> loadView('patient_add', NULL);
 					break;
 				case 'del' :
+					$this -> dao -> removePatient($_GET['idpatient']);
 					break;
 				case 'search' :
 					break;

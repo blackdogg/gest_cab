@@ -1,4 +1,3 @@
-
 <div>
 	<table id="list">
 		<thead>
@@ -20,3 +19,8 @@
 		</tbody>
 	</table>
 </div>
+<script type="text/javascript">
+	$("#list").dataTable({
+		"bJQueryUI":true
+	});
+</script>

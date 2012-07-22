@@ -45,7 +45,8 @@
 </form>
 
 <script type="text/javascript">	
-	$(document).ready(function(){		
+	$(document).ready(function(){
+		$("#dt_naiss").datepicker($.datepicker.regional['fr']);
 		$("#dt_naiss").datepicker({ dateFormat: 'yy-mm-dd' });
 	});	
 </script>

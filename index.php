@@ -11,9 +11,13 @@
 		<link rel="stylesheet" type="text/css" href="css/btns.css" />
 		<link rel="stylesheet" type="text/css" href="css/forms.css" />
 		<link rel="stylesheet" type="text/css" href="css/jquery-ui-1.8.21.custom.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.dataTables.css" />
+		<link rel="stylesheet" type="text/css" href="css/jquery.dataTables_themeroller.css" />
 
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.21.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery.ui.datepicker-fr.js"></script>
+		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<!-- Date: 2012-07-16 -->
 	</head>
 

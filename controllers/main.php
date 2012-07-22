@@ -13,7 +13,7 @@ class Main {
 				$control = new $class();
 				$control -> process();
 			} else {
-				echo "404";
+				echo "Vous avez demander une page qui n'existe pas";
 			}
 		} else {
 			$this -> loadDefaultView();

@@ -23,5 +23,20 @@ class rdvDAO_Impl implements rdvDAO_Interface {
 		$persistRDV = $this->con->prepare("INSERT INTO `rdv`(`patient_idpatient`, `date`, `motif`) VALUES (?,?,?)");
 		$persistRDV->execute(array($rdv->getPatient(), $rdv->getDate(), $rdv->getMotif()));
 	}
+	
+	public function getRDVsByDate($dt){
+		$listRDVQuery = $this -> con->prepare("SELECT * FROM rdv WHERE date=?");
+		return $listRDVQuery->execute(array($dt));
+	}
+	
+	public function removeRDV($id){
+		$removeRDVQuery = $this->con->prepare("DELETE FROM rdv WHERE idrdv=?");
+		$removeRDVQuery->execute(array($id));
+	}
+	
+	public function getRDVsByPatient($idpatient){
+		$listRDVQuery = $this -> con->prepare("SELECT * FROM rdv WHERE patient_idpatient=?");
+		return $listRDVQuery->execute(array($idpatient));
+	}
 }
 ?>

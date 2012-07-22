@@ -1,34 +1,33 @@
 <?php
-require_once ('dao/patientDAO_Interface.php' );
+require_once ('dao/patientDAO_Interface.php');
 
-	class PatientDAO_Impl implements PatientDAO {
+class PatientDAO_Impl implements PatientDAO {
 	private $con;
 	public function __construct() {
-	$host = "localhost";
-	$port = "3306";
-	$database = "cabinet_med";
-	$username = "root";
-	$password = "";
+		$host = "localhost";
+		$port = "3306";
+		$database = "cabinet_med";
+		$username = "root";
+		$password = "";
 
-	try {
-	$this -> con = new PDO("mysql:host=" . $host . ";port=" . $port . ";dbname=" . $database . ";", $username, $password);
-	$this -> con -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	} catch(Exception $e) {
-	echo "Erreur : " . $e -> getMessage() . "
+		try {
+			$this -> con = new PDO("mysql:host=" . $host . ";port=" . $port . ";dbname=" . $database . ";", $username, $password);
+			$this -> con -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		} catch(Exception $e) {
+			echo "Erreur : " . $e -> getMessage() . "
 	<br />
 	";
-	echo "N° :" . $e -> getCode();
-	}
+			echo "N° :" . $e -> getCode();
+		}
 	}
 
 	public function persistPatient($p) {
-	$persist = $this -> con -> prepare(
-"INSERT INTO `patient`(`nom`, `prenom`, `date_naissance`, `adresse`, `tel`, `sf`, `sp`, `aicdf`, `aicdp`) VALUES (?,?,?,?,?,?,?,?,?)");
+		$persist = $this -> con -> prepare("INSERT INTO `patient`(`nom`, `prenom`, `date_naissance`, `adresse`, `tel`, `sf`, `sp`, `aicdf`, `aicdp`) VALUES (?,?,?,?,?,?,?,?,?)");
 		$persist -> execute(array($p -> getNom(), $p -> getPrenom(), $p -> getDateNaiss(), $p -> getAdresse(), $p -> getTel(), $p -> getSf(), $p -> getSp(), $p -> getAicdF(), $p -> getAicdP()));
 	}
-	
-	public function removePatient($p){
-		$this->con->query("DELETE FROM patient WHERE idpatient=".$this->con->quote($p->getId(),PDO::PARAM_INT));
+
+	public function removePatient($id) {
+		$this -> con -> query("DELETE FROM patient WHERE idpatient=" . $this -> con -> quote($id, PDO::PARAM_INT));
 	}
 
 	public function getPatient($id) {
