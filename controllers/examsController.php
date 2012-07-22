@@ -11,14 +11,14 @@ class examsController{
 	}
 	
 	public function process(){
-		if(isset($_GET['ation'])){
+		if(isset($_GET['action'])){
 			$this->action = $_GET['action'];
 			switch($this->action){
 				case 'list':
-					if(isset($_GET['dt'])){
-						$exams = $this->dao->examByDate($_GET['dt']);
-					}elseif(isset($_GET['patient'])){
-						$exams = $this->dao->examByPatient($_GET['patient']);
+					if(isset($_POST['dt'])){
+						$exams = $this->dao->examByDate($_POST['dt']);
+					}elseif(isset($_POST['patient'])){
+						$exams = $this->dao->examByPatient($_POST['patient']);
 					}else{
 						$exams=NULL;
 					}
@@ -32,12 +32,15 @@ class examsController{
 					$this->loadView('exams_add', NULL);
 					break;
 			}
+		}else{
+			$this->action = 'add';
+			$this->loadView('exams_add', NULL);
 		}
 	}
 	
 	public function loadView($v, $data) {
 		$view = 'views/' . $v . '.php';
-		$consults = $data;
+		$examens = $data;
 		include ($view);
 	}
 }
