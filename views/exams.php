@@ -1,4 +1,4 @@
-
+<h2>List des examens</h2>
 <div>
 	<form method="get" action="">
 		<label for="nompatient">Nom :</label> <input type="text" name="nompatient" id="nompatient" />

@@ -25,6 +25,11 @@ class examsController{
 					$this->loadView('exams', $exams);
 					break;
 				case 'add':
+					$this->loadView('exams_add', NULL);
+					break;
+				default :
+					$this->action = 'add';
+					$this->loadView('exams_add', NULL);
 					break;
 			}
 		}
