@@ -34,6 +34,12 @@
 	</table>
 </div>
 <script type="text/javascript">
+	$(document).ready(function() {
+		$("#dt").datepicker($.datepicker.regional['fr']);
+		$("#dt").datepicker({
+			dateFormat : 'yy-mm-dd'
+		});
+	});
 	function popSelectPatient() {
 		popup = window.open('views/popups/patient_list.php', 'Selection du patient', 'width=720,height=480');
 	}

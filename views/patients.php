@@ -1,8 +1,12 @@
+<h2>Liste des patients</h2>
 <div>
 	<table id="list">
 		<thead>
 			<th>Nom</th>
 			<th>Prenom</th>
+			<th>Date de naissance</th>
+			<th>Adresse</th>
+			<th>Numero de telephone</th>
 		</thead>
 		
 		<tbody>
@@ -12,6 +16,9 @@
 			<tr>
 				<td><?php echo $patients[$key]['nom']; ?></td>
 				<td><?php echo $patients[$key]['prenom']; ?></td>
+				<td><?php echo $patients[$key]['date_naissance']; ?></td>
+				<td><?php echo $patients[$key]['adresse']; ?></td>
+				<td><?php echo $patients[$key]['tel']; ?></td>
 			</tr>
 			<?php
 				}
