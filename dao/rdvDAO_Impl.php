@@ -26,7 +26,8 @@ class rdvDAO_Impl implements rdvDAO_Interface {
 	
 	public function getRDVsByDate($dt){
 		$listRDVQuery = $this -> con->prepare("SELECT * FROM rdv WHERE date=?");
-		return $listRDVQuery->execute(array($dt));
+		$listRDVQuery->execute(array($dt));
+		return $listRDVQuery->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
 	public function removeRDV($id){
@@ -36,7 +37,8 @@ class rdvDAO_Impl implements rdvDAO_Interface {
 	
 	public function getRDVsByPatient($idpatient){
 		$listRDVQuery = $this -> con->prepare("SELECT * FROM rdv WHERE patient_idpatient=?");
-		return $listRDVQuery->execute(array($idpatient));
+		$listRDVQuery->execute(array($idpatient));
+		return $listRDVQuery->fetchAll(PDO::FETCH_ASSOC);
 	}
 }
 ?>
