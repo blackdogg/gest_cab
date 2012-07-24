@@ -1,8 +1,9 @@
-<h2>List des examens</h2>
-<div>
-	<form method="post" action="">
+<h2 class="page_title">List des examens</h2>
+<div style="margin-bottom: 25px">
+	<form method="post" action="" id="filter_form_exam">
 		<label for="nompatient">Nom :</label>
-		<input type="text" name="nompatient" id="nompatient" /><img src="images/patients-icon.gif" width="16" height="16" onclick="popSelectPatient()" />
+		<input type="text" name="nompatient" id="nompatient" />
+		<img class="pop_btn" src="images/patients-icon.gif" width="24" height="24" onclick="popSelectPatient()" />
 		<input type="hidden" name="patient" id="patient" />
 		<label for="date">Date :</label>
 		<input type="text" name="dt" id="dt" />
@@ -10,7 +11,7 @@
 	</form>
 </div>
 
-<div>
+<div class="tablist_container">
 	<table id="list">
 		<thead>
 			<th>Patient</th>
@@ -20,6 +21,7 @@
 
 		<tbody>
 			<?php
+			if($examens != NULL){
 			foreach($examens as $key => $exam){
 			?>
 			<tr>
@@ -28,6 +30,7 @@
 				<td><?php echo $examens[$key]['date_exam']; ?></td>
 			</tr>
 			<?php
+			}
 			}
 			?>
 		</tbody>
@@ -40,7 +43,16 @@
 			dateFormat : 'yy-mm-dd'
 		});
 	});
+
+	$("#list").dataTable({
+		"bJQueryUI" : true,
+		"sPaginationType" : "full_numbers",
+		"oLanguage" : {
+			"sUrl" : "js/lng/dataTables.french.json"
+		}
+	});
+
 	function popSelectPatient() {
 		popup = window.open('views/popups/patient_list.php', 'Selection du patient', 'width=720,height=480');
-	}
+	}
 </script>

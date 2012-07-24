@@ -1,4 +1,4 @@
-<h2>Liste des patients</h2>
+<h2 class="page_title">Liste des patients</h2>
 <div class="tablist_container">
 	<table id="list">
 		<thead>

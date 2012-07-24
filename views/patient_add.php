@@ -1,4 +1,4 @@
-<h2>Ajout d'un patient</h2>
+<h2 class="page_title">Ajout d'un patient</h2>
 
 <form name="add_patient" method="post" action="">
 	<fieldset>
