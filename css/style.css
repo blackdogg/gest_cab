@@ -28,6 +28,11 @@ h2{
 	background: #ffd9d9;
 }
 
+#tmenu{
+	margin: 5px 0;
+	height: 45px;
+}
+
 .clear{
 	zoom: 1;
 	clear: both;

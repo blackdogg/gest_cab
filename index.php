@@ -7,7 +7,7 @@
 		<title>Cabinet Medical</title>
 		<meta name="author" content="nvtech" />
 
-		<link rel="stylesheet" type="text/css" href="css/superfish.css" media="screen" />
+		<link rel="stylesheet" type="text/css" href="css/superfish.css" />
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<link rel="stylesheet" type="text/css" href="css/btns.css" />
 		<link rel="stylesheet" type="text/css" href="css/forms.css" />
@@ -20,15 +20,8 @@
 		<script type="text/javascript" src="js/jquery-ui-1.8.21.custom.min.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.datepicker-fr.js"></script>
 		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
-		<script type="text/javascript" src="js/hoverIntent.js"></script>
 		<script type="text/javascript" src="js/superfish.js"></script>
 		<!-- Date: 2012-07-16 -->
-		<script type="text/javascript">
-			jQuery(function() {
-				jQuery('ul.sf-menu').superfish();
-			});
-		</script>
-
 	</head>
 
 	<body>
@@ -41,8 +34,8 @@
 			<div id="tmenu">
 				<ul class="sf-menu">
 					<li class="current">
+						<a href="#">Patients</a>
 						<ul>
-							<a>Patients</a>
 							<li>
 								<a href="#">Lister</a>
 							</li>
@@ -53,8 +46,8 @@
 					</li>
 
 					<li>
+						<a href="#">Rendez vous</a>
 						<ul>
-							<a>Rendez vous</a>
 							<li>
 								<a href="#">Lister</a>
 							</li>
@@ -65,40 +58,13 @@
 					</li>
 
 					<li>
+						<a href="#">Examens</a>
 						<ul>
-							<a>Consultations</a>
 							<li>
 								<a href="#">Lister</a>
 							</li>
 							<li>
 								<a href="#">Ajouter</a>
-							</li>
-						</ul>
-					</li>
-
-					<li>
-						<ul>
-							<a>Examens</a>
-							<li>
-								<a href="#">Lister</a>
-							</li>
-							<li>
-								<a href="#">Ajouter</a>
-							</li>
-						</ul>
-					</li>
-
-					<li>
-						<ul>
-							<a>Statistiques</a>
-							<li>
-								<a href="#">Generales</a>
-							</li>
-							<li>
-								<a href="#">Examens</a>
-							</li>
-							<li>
-								<a href="#">Patiens</a>
 							</li>
 						</ul>
 					</li>
@@ -118,6 +84,12 @@
 			<div class="clear"></div>
 		</div>
 		<div class="clear"></div>
+
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('ul.sf-menu').superfish();
+			});
+		</script>
 	</body>
 </html>
 
