@@ -1,5 +1,5 @@
 <h2>Liste des patients</h2>
-<div>
+<div class="tablist_container">
 	<table id="list">
 		<thead>
 			<th>Nom</th>
@@ -28,6 +28,10 @@
 </div>
 <script type="text/javascript">
 	$("#list").dataTable({
-		"bJQueryUI":true
+		"bJQueryUI":true,
+		"sPaginationType":"full_numbers",
+		"oLanguage":{
+			"sUrl":"js/lng/dataTables.french.json"
+		}
 	});
 </script>
