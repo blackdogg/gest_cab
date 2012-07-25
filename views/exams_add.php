@@ -48,5 +48,6 @@ if (isset($_POST['ok'])) {
 	$exam = new Examen($_POST['exam'], $_POST['patient'], $_POST['dt_exam'], $_POST['rapport']);
 	$examDAO = new examDAO_Impl;
 	$examDAO -> persistExam($exam);
+	safe_redirect('index.php?page=exams&action=list');
 }
 ?>

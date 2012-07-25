@@ -60,5 +60,7 @@ if (isset($_POST['valider'])) {
 	$patient = new Patient($_POST['nom'], $_POST['pren'], $_POST['dt_naiss'], $_POST['addr'], $_POST['sf'], $_POST['sp'], $_POST['aicdf'], $_POST['aicdp'], $_POST['tel']);
 	$patientDAO = new PatientDAO_Impl();
 	$patientDAO -> persistPatient($patient);
+	safe_redirect('index.php?page=patients&action=list');
 }
+
 ?>

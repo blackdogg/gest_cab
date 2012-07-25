@@ -26,6 +26,28 @@
 	</head>
 
 	<body>
+		<?php
+		function safe_redirect($url, $method = 'PHP') {
+			try {
+				if (!headers_sent()) {
+					//If headers are not sent yet... then do a php redirect
+					@header('Location: ' . $url);
+					exit ;
+				} else
+					throw new Exception();
+			} catch( Exception $ex ) {
+				//If headers are sent... do a JavaScript redirect...
+				//if javascript disabled, do html redirect.
+				echo '<script type="text/javascript">';
+				echo 'window.location.href="' . $url . '";';
+				echo '</script>';
+				echo '<noscript>';
+				echo '<meta http-equiv="refresh" content="0;url=' . $url . '" />';
+				echo '</noscript>';
+				exit ;
+			}
+		}
+		?>
 		<div id="header">
 			&nbsp;
 			<div class="clear"></div>
@@ -38,7 +60,7 @@
 						<a href="index.php?page=patients">Patients</a>
 						<ul>
 							<li>
-								<a href="index.php?page=patients">Lister</a>
+								<a href="index.php?page=patients&action=list">Lister</a>
 							</li>
 							<li>
 								<a href="index.php?page=patients&action=add">Ajouter</a>
@@ -50,10 +72,10 @@
 						<a href="index.php?page=rdv">Rendez vous</a>
 						<ul>
 							<li>
-								<a href="index.php?page=patients">Lister</a>
+								<a href="index.php?page=rdv&action=list">Lister</a>
 							</li>
 							<li>
-								<a href="index.php?page=patients&action=add">Ajouter</a>
+								<a href="index.php?page=rdv&action=add">Ajouter</a>
 							</li>
 						</ul>
 					</li>
@@ -62,7 +84,7 @@
 						<a href="index.php?page=exams">Examens</a>
 						<ul>
 							<li>
-								<a href="index.php?page=exams">Lister</a>
+								<a href="index.php?page=exams&action=list">Lister</a>
 							</li>
 							<li>
 								<a href="index.php?page=exams&action=add">Ajouter</a>

@@ -26,15 +26,17 @@ class examDAO_Impl implements examDAO_Interface {
 	}
 	
 	public function listExam(){
-		$getExam = $this->con->query("SELECT * FROM `patient_exam`");
-		return $getExam->fetcAll(PDO::FETCH_ASSOC);
+		$getExam = $this->con->query("SELECT * FROM `patient_exam`
+									INNER JOIN patient ON patient.idpatient = patient_exam.patient_idpatient
+									INNER JOIN type_exam ON type_exam.idtype_exam = patient_exam.type_exam_id");
+		return $getExam->fetchAll(PDO::FETCH_ASSOC);
 	}
 	
 	public function examByDate($dt){
 		$exByDate = $this->con->prepare("SELECT nom, prenom, nom_exam, date_exam, rapport FROM `patient_exam` 
 										INNER JOIN patient ON patient.idpatient = patient_exam.patient_idpatient
 										INNER JOIN type_exam ON type_exam.idtype_exam = patient_exam.type_exam_id
-										WHERE date_exam = ?");
+										WHERE DATE(date_exam) = ?");
 		$exByDate->execute(array($dt));
 		return $exByDate->fetchAll(PDO::FETCH_ASSOC);
 	}

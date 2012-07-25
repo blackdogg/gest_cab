@@ -7,7 +7,7 @@ class examsController{
 	
 	public function __construct(){
 		$this->dao = new examDAO_Impl;
-		$this->action = 'list';
+		//$this->action = 'list';
 	}
 	
 	public function process(){
@@ -15,12 +15,12 @@ class examsController{
 			$this->action = $_GET['action'];
 			switch($this->action){
 				case 'list':
-					if(isset($_POST['dt'])){
+					if(isset($_POST['dt'])&&($_POST['dt'] != "")){
 						$exams = $this->dao->examByDate($_POST['dt']);
-					}elseif(isset($_POST['patient'])){
+					}elseif(isset($_POST['patient'])&&($_POST['patient'] != "")){
 						$exams = $this->dao->examByPatient($_POST['patient']);
 					}else{
-						$exams=NULL;
+						$exams = $this->dao->listExam();
 					}
 					$this->loadView('exams', $exams);
 					break;
@@ -28,12 +28,10 @@ class examsController{
 					$this->loadView('exams_add', NULL);
 					break;
 				default :
-					$this->action = 'add';
-					$this->loadView('exams_add', NULL);
 					break;
 			}
 		}else{
-			$this->action = 'add';
+			$this->action = 'list_all';
 			$this->loadView('exams_add', NULL);
 		}
 	}
