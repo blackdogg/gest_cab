@@ -29,10 +29,12 @@ class patientsController {
 				default :
 					$this -> action = 'list';
 					$patients = $this -> dao -> getPatientList();
-					$this -> loadView('patients', $patients);					
+					$this -> loadView('patients', $patients);
 			}
 		} else {
-			echo "no action";
+			$this -> action = 'list';
+			$patients = $this -> dao -> getPatientList();
+			$this -> loadView('patients', $patients);
 		}
 	}
 

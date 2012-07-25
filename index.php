@@ -18,6 +18,7 @@
 
 		<script type="text/javascript" src="js/jquery-1.7.2.min.js"></script>
 		<script type="text/javascript" src="js/jquery-ui-1.8.21.custom.min.js"></script>
+		<script type="text/javascript" src="js/jquery-ui-timepicker-addon.js"></script>
 		<script type="text/javascript" src="js/jquery.ui.datepicker-fr.js"></script>
 		<script type="text/javascript" src="js/jquery.dataTables.min.js"></script>
 		<script type="text/javascript" src="js/superfish.js"></script>
@@ -34,37 +35,37 @@
 			<div id="tmenu">
 				<ul class="sf-menu">
 					<li class="current">
-						<a href="#">Patients</a>
+						<a href="index.php?page=patients">Patients</a>
 						<ul>
 							<li>
-								<a href="#">Lister</a>
+								<a href="index.php?page=patients">Lister</a>
 							</li>
 							<li>
-								<a href="#">Ajouter</a>
+								<a href="index.php?page=patients&action=add">Ajouter</a>
 							</li>
 						</ul>
 					</li>
 
 					<li>
-						<a href="#">Rendez vous</a>
+						<a href="index.php?page=rdv">Rendez vous</a>
 						<ul>
 							<li>
-								<a href="#">Lister</a>
+								<a href="index.php?page=patients">Lister</a>
 							</li>
 							<li>
-								<a href="#">Ajouter</a>
+								<a href="index.php?page=patients&action=add">Ajouter</a>
 							</li>
 						</ul>
 					</li>
 
 					<li>
-						<a href="#">Examens</a>
+						<a href="index.php?page=exams">Examens</a>
 						<ul>
 							<li>
-								<a href="#">Lister</a>
+								<a href="index.php?page=exams">Lister</a>
 							</li>
 							<li>
-								<a href="#">Ajouter</a>
+								<a href="index.php?page=exams&action=add">Ajouter</a>
 							</li>
 						</ul>
 					</li>

@@ -45,10 +45,14 @@
 </form>
 
 <script type="text/javascript">	
-	$(document).ready(function(){
-		$("#dt_naiss").datepicker($.datepicker.regional['fr']);
-		$("#dt_naiss").datepicker({ dateFormat: 'yy-mm-dd' });
-	});	
+	$(document).ready(function() {
+		$("#dt_naiss").datepicker({
+			yearRange : "-120:-5",
+			changeMonth : true,
+			changeYear : true
+		});
+		$("#dt_naiss").datepicker("option", "dateFormat", "yy-mm-dd");
+	});
 </script>
 
 <?php

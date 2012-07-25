@@ -7,7 +7,9 @@
 		<input type="hidden" name="patient" id="patient" />
 		<label for="date">Date :</label>
 		<input type="text" name="dt" id="dt" />
-		<input type="submit" name="ok" id="ok" value="Filtrer" />
+		<div class="form_ctrl">
+			<input type="submit" name="ok" id="ok" value="Filtrer" />
+		</div>		
 	</form>
 </div>
 
