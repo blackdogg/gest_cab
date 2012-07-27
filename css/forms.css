@@ -40,3 +40,48 @@ form input[type="text"], input[type="date"] {
 	width: 300px;
 	margin: 15px auto;
 }
+
+.fiche{
+	width: 720px;
+	margin: 10px auto;
+	padding: 5px;
+	border: solid black 1px;
+}
+
+.fiche span.label{
+	display: inline-block;
+	font-size: 1.3em;
+	font-weight: bold;
+	width: 30%;
+}
+
+.fiche span.info{
+	display: inline-block;
+	font-size: 1.3em;
+	width: 50%;
+}
+
+#patient_tool{
+	width: 700px;
+	margin: 0 auto;
+}
+
+#patient_tool div{
+	cursor: pointer;
+	background-color: #EEEEEE;
+	text-align: center;
+	display: inline-block;
+	width: 200px;
+	border: solid black 1px;
+	border-radius: 4px;
+}
+
+#patient_tool div:hover{
+	cursor: hand;
+	background-color: #DDDDDD;
+}
+
+#detail_frm{
+	width: 700px;
+	margin: 15px auto;
+}

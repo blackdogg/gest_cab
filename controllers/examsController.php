@@ -27,6 +27,10 @@ class examsController{
 				case 'add':
 					$this->loadView('exams_add', NULL);
 					break;
+				case 'del':
+					$this->action = 'del';
+					$this->dao->delExam($_GET['id']);
+					break;
 				default :
 					break;
 			}

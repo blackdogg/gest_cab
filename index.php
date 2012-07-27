@@ -49,11 +49,11 @@
 		}
 		?>
 		<div id="header">
-			&nbsp;
-			<div class="clear"></div>
+			<div class="clear">&nbsp;</div>
 		</div>
 
 		<div id="contentWrap">
+			<div class="clear">&nbsp;</div>
 			<div id="tmenu">
 				<ul class="sf-menu">
 					<li class="current">
@@ -99,14 +99,13 @@
 			$controller = new Main();
 			$controller -> process();
 			?>
-			<div class="clear"></div>
+			<div class="clear">&nbsp;</div>
 		</div>
 
 		<div id="footer">
 			&nbsp;
-			<div class="clear"></div>
+			<div class="clear">&nbsp;</div>
 		</div>
-		<div class="clear"></div>
 
 		<script type="text/javascript">
 			$(document).ready(function() {

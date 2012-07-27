@@ -22,9 +22,11 @@ class patientsController {
 					$this -> loadView('patient_add', NULL);
 					break;
 				case 'del' :
-					$this -> dao -> removePatient($_GET['idpatient']);
+					$this -> dao -> removePatient($_GET['id']);
 					break;
-				case 'search' :
+				case 'detail' :					
+					$p = $this->dao->getPatient($_GET['id']);
+					$this->loadView('patient_detail', $p);
 					break;
 				default :
 					$this -> action = 'list';
@@ -41,7 +43,7 @@ class patientsController {
 	public function loadView($v, $data) {
 		$view = 'views/' . $v . '.php';
 		$patients = $data;
-		include ($view);
+		require ($view);
 	}
 
 }

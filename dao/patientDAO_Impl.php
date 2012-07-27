@@ -31,12 +31,9 @@ class PatientDAO_Impl implements PatientDAO {
 	}
 
 	public function getPatient($id) {
-		$getPatient = $this -> con -> prepare("SELECT `idpatient`, `nom`, `prenom`, `date_naissance`, `sf`, `sp` FROM `patient` WHERE idpatient=?");
+		$getPatient = $this -> con -> prepare("SELECT `idpatient`, `nom`, `prenom`,`date_naissance`, `adresse`, `sf`, `sp`, `aicdf`, `aicdp`, `tel` FROM `patient` WHERE idpatient=?");
 		$getPatient -> execute(array($id));
-		$result = $getPatient -> fetch(PDO::FETCH_ASSOC);
-		$patient = new Patient($result['nom'], $result['prenom'], $result['date_naissance'], $result['sf'], $result['sp']);
-		$patient -> setId($result['idpatient']);
-		return $patient;
+		return $getPatient->fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function getPatientList() {
