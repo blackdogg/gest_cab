@@ -31,12 +31,13 @@ class consultController{
 					$this->action = 'del';
 					$this->dao->removeConsult($_GET['id']);
 					break;		
-				default:	
-								
+				default:								
 					break;
 			}
 		}else{
-			
+			$this->action='list';
+			$consults = $this->dao->listConsults();
+			$this->loadView('consults', $consults);
 		}
 	}
 	

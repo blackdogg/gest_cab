@@ -36,7 +36,8 @@ class examsController{
 			}
 		}else{
 			$this->action = 'list_all';
-			$this->loadView('exams_add', NULL);
+			$exams = $this->dao->listExam();
+			$this->loadView('exams', $exams);
 		}
 	}
 	
