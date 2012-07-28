@@ -38,6 +38,6 @@
 	});
 	
 	function delPatient(id){
-		
+		if(confirm())
 	}
 </script>
