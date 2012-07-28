@@ -29,8 +29,8 @@
 			?>
 			<tr>
 				<td><?php echo $consults[$key]['nom'] . " " . $consults[$key]['prenom']; ?></td>
-				<td><?php echo $consults[$key]['nom_exam']; ?></td>
-				<td><?php echo $consults[$key]['date_exam']; ?></td>
+				<td><?php echo $consults[$key]['date']; ?></td>
+				<td><?php echo $consults[$key]['rapport']; ?></td>
 			</tr>
 			<?php
 			}

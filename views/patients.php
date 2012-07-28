@@ -7,6 +7,7 @@
 			<th>Date de naissance</th>
 			<th>Adresse</th>
 			<th>Numero de telephone</th>
+			<th style="width: 16px">&nbsp;</th>
 		</thead>
 		
 		<tbody>
@@ -19,6 +20,7 @@
 				<td><?php echo $patients[$key]['date_naissance']; ?></td>
 				<td><?php echo $patients[$key]['adresse']; ?></td>
 				<td><?php echo $patients[$key]['tel']; ?></td>
+				<td><img src="images/del_icon.jpeg" onclick="delPatient(<?php $patients[$key]['idpatient']; ?>)" /></td>
 			</tr>
 			<?php
 				}
@@ -34,4 +36,8 @@
 			"sUrl":"js/lng/dataTables.french.json"
 		}
 	});
+	
+	function delPatient(id){
+		
+	}
 </script>

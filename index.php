@@ -79,6 +79,18 @@
 							</li>
 						</ul>
 					</li>
+					
+					<li>
+						<a href="index.php?page=consult">Consultations</a>
+						<ul>
+							<li>
+								<a href="index.php?page=consult&action=list">Lister</a>
+							</li>
+							<li>
+								<a href="index.php?page=consult&action=add">Ajouter</a>
+							</li>
+						</ul>
+					</li>
 
 					<li>
 						<a href="index.php?page=exams">Examens</a>
