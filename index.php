@@ -57,51 +57,51 @@
 			<div id="tmenu">
 				<ul class="sf-menu">
 					<li class="current">
-						<a href="index.php?page=patients">Patients</a>
-						<ul>
+						<a href="index.php?page=patients&action=list">Patients</a>
+						<!--<ul>
 							<li>
 								<a href="index.php?page=patients&action=list">Lister</a>
 							</li>
 							<li>
 								<a href="index.php?page=patients&action=add">Ajouter</a>
 							</li>
-						</ul>
+						</ul>-->
 					</li>
 
 					<li>
-						<a href="index.php?page=rdv">Rendez vous</a>
-						<ul>
+						<a href="index.php?page=rdv&action=list">Rendez vous</a>
+						<!--<ul>
 							<li>
 								<a href="index.php?page=rdv&action=list">Lister</a>
 							</li>
 							<li>
 								<a href="index.php?page=rdv&action=add">Ajouter</a>
 							</li>
-						</ul>
+						</ul>-->
 					</li>
 					
 					<li>
-						<a href="index.php?page=consult">Consultations</a>
-						<ul>
+						<a href="index.php?page=consult&action=list">Consultations</a>
+						<!--<ul>
 							<li>
 								<a href="index.php?page=consult&action=list">Lister</a>
 							</li>
 							<li>
 								<a href="index.php?page=consult&action=add">Ajouter</a>
 							</li>
-						</ul>
+						</ul>-->
 					</li>
 
 					<li>
-						<a href="index.php?page=exams">Examens</a>
-						<ul>
+						<a href="index.php?page=exams&action=list">Examens</a>
+						<!--<ul>
 							<li>
 								<a href="index.php?page=exams&action=list">Lister</a>
 							</li>
 							<li>
 								<a href="index.php?page=exams&action=add">Ajouter</a>
 							</li>
-						</ul>
+						</ul>-->
 					</li>
 				</ul>
 			</div>

@@ -3,7 +3,7 @@
 <div style="margin-bottom: 25px">
 	<form method="post" action="" id="filter_form_exam">
 		<label for="nompatient">Nom :</label>
-		<input type="text" name="nompatient" id="nompatient" />
+		<input type="text" name="nompatient" id="nompatient" readonly="readonly" />
 		<img class="pop_btn" src="images/patients-icon.gif" width="24" height="24" onclick="popSelectPatient()" />
 		<input type="hidden" name="patient" id="patient" />
 		<label for="date">Date :</label>
@@ -19,8 +19,9 @@
 		<thead>
 			<th>Patient</th>
 			<th>Examen</th>
+			<th>Rapport</th>
 			<th>Date</th>
-			<th>&nbsp;</th>
+			<th style="width: 16px">&nbsp;</th>
 		</thead>
 
 		<tbody>
@@ -31,6 +32,7 @@
 			<tr>
 				<td><?php echo $examens[$key]['nom'] . " " . $examens[$key]['prenom']; ?></td>
 				<td><?php echo $examens[$key]['nom_exam']; ?></td>
+				<td><?php echo $examens[$key]['rapport']; ?></td>
 				<td><?php echo $examens[$key]['date_exam']; ?></td>
 				<td><img src="images/del_icon.jpg" width="16" height="16" onclick="delExam('<?php $examens[$key]['id_ex']; ?>')" /></td>
 			</tr>

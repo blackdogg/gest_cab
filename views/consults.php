@@ -3,7 +3,7 @@
 <div style="margin-bottom: 25px">
 	<form method="post" action="" id="filter_form_exam">
 		<label for="nompatient">Nom :</label>
-		<input type="text" name="nompatient" id="nompatient" />
+		<input type="text" name="nompatient" id="nompatient" readonly="readonly"/>
 		<img class="pop_btn" src="images/patients-icon.gif" width="24" height="24" onclick="popSelectPatient()" />
 		<input type="hidden" name="patient" id="patient" />
 		<label for="date">Date :</label>
