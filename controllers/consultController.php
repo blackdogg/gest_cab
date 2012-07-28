@@ -12,14 +12,14 @@ class consultController{
 	public function process(){
 		if(isset($_GET['action'])){
 			$this->action = $_GET['action'];
-			switch ($action) {
+			switch ($this->action) {
 				case 'list':
 					if(isset($_POST['dt'])&&($_POST['dt'] != "")){
 						$consults = $this->dao->consultByDate($_POST['dt']);
 					}elseif(isset($_POST['patient'])&&($_POST['patient'] != "")){
 						$consults = $this->dao->consultByPatient($_POST['patient']);
 					}else{
-						$consults = $this->dao->listExam();
+						$consults = $this->dao->listConsults();
 					}
 					$this->loadView('consults', $consults);
 					break;
@@ -43,7 +43,7 @@ class consultController{
 	
 	public function loadView($v, $data) {
 		$view = 'views/' . $v . '.php';
-		$examens = $data;
+		$consults = $data;
 		include ($view);
 	}
 }

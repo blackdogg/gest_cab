@@ -1,4 +1,5 @@
 <h2 class="page_title">List des examens</h2>
+
 <div style="margin-bottom: 25px">
 	<form method="post" action="" id="filter_form_exam">
 		<label for="nompatient">Nom :</label>
@@ -12,13 +13,14 @@
 		</div>		
 	</form>
 </div>
-
+<div class="util_btn" onclick="addExam()">Ajouter un examen</div>
 <div class="tablist_container">
 	<table id="list">
 		<thead>
 			<th>Patient</th>
 			<th>Examen</th>
 			<th>Date</th>
+			<th>&nbsp;</th>
 		</thead>
 
 		<tbody>
@@ -30,6 +32,7 @@
 				<td><?php echo $examens[$key]['nom'] . " " . $examens[$key]['prenom']; ?></td>
 				<td><?php echo $examens[$key]['nom_exam']; ?></td>
 				<td><?php echo $examens[$key]['date_exam']; ?></td>
+				<td><img src="images/del_icon.jpg" width="16" height="16" onclick="delExam('<?php $examens[$key]['id_ex']; ?>')" /></td>
 			</tr>
 			<?php
 			}
@@ -41,9 +44,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#dt").datepicker($.datepicker.regional['fr']);
-		$("#dt").datepicker({
-			dateFormat : 'yy-mm-dd'
-		});
+		$("#dt").datepicker("option", "dateFormat", "yy-mm-dd");
 	});
 
 	$("#list").dataTable({
@@ -56,5 +57,17 @@
 
 	function popSelectPatient() {
 		popup = window.open('views/popups/patient_list.php', 'Selection du patient', 'width=720,height=480');
+	}
+	
+	function delExam(id){
+		if(confirm("Etes vous sure de vouloire supprimer cet examen")){
+			window.location.href='index.php?page=exams&action=del&id='+id;
+		}
+	}
+	
+	function addExam(){
+		if(confirm("Passer a la fenetre de creation d'examen ?")){
+			window.location.href='index.php?page=exams&action=add';
+		}
 	}
 </script>

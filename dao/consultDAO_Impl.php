@@ -22,27 +22,27 @@ class consultDAO_Impl implements consultDAO_Interface {
 
 	public function persistConsult($c) {
 		$insertCon = $this -> con -> prepare("INSERT INTO `consultation`(`patient_idpatient`, `date`, `rapport`) VALUES (?,?,?)");
-		$insertCon -> execute(array($c -> getPaient(), $c -> getDaet(), $c -> getRapport()));
+		$insertCon -> execute(array($c -> getPatient(), $c -> getDateConsult(), $c -> getRapport()));
 	}
 
 	public function listConsults() {
-		$getConsults = $this -> con -> query("SELECT nom, prenom , date, rapport FROM consultation
+		$getConsults = $this -> con -> query("SELECT idconsultation, nom, prenom , date, rapport FROM consultation
 										INNER JOIN patient ON patient.idpatient = consultation.patient_idpatient");
 		return $getConsults -> fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function consultByDate($dt) {
-		$getConsultByDate = $this -> con -> prepare("SELECT nom, prenom , date, rapport FROM consultation
+		$getConsultByDate = $this -> con -> prepare("SELECT idconsultation, nom, prenom , date, rapport FROM consultation
 										INNER JOIN patient ON patient.idpatient = consultation.patient_idpatient
-										WHERE date=");
+										WHERE date=?");
 		$getConsultByDate -> execute(array($dt));
 		return $getConsultByDate -> fetchAll(PDO::FETCH_ASSOC);
 	}
 
 	public function consultByPatient($patient) {
-		$getConsultByPatient = $this -> con -> prepare("SELECT nom, prenom , date, rapport FROM consultation
+		$getConsultByPatient = $this -> con -> prepare("SELECT idconsultation, nom, prenom , date, rapport FROM consultation
 										INNER JOIN patient ON patient.idpatient = consultation.patient_idpatient
-										WHERE date=");
+										WHERE patient_idpatient=?");
 		$getConsultByPatient -> execute(array($patient));
 		return $getConsultByPatient -> fetchAll(PDO::FETCH_ASSOC);
 	}

@@ -4,7 +4,8 @@ body{
 }
 
 h2.page_title{
-	margin: 5px 0;
+	margin: 85px auto 20px;
+	text-align: center;
 	padding: 0;
 }
 
@@ -19,7 +20,7 @@ h2.page_title{
 	margin: 0 auto;
 	padding: 0;
 	width: 960px;
-	background: #cce6ff;
+	/*background: #cce6ff;*/
 }
 
 #footer{

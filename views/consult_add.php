@@ -21,12 +21,12 @@
 
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#dt_exam").datepicker({
+		$("#dt_cons").datepicker({
 			yearRange : "-0:+5",
 			changeMonth : true,
 			changeYear : true
 		});
-		$("#dt_exam").datepicker("option", "dateFormat", "yy-mm-dd");
+		$("#dt_cons").datepicker("option", "dateFormat", "yy-mm-dd");
 	});
 
 	function popSelectPatient() {
@@ -36,7 +36,7 @@
 
 <?php
 if (isset($_POST['ok'])) {
-	$consult = new Consultation($_POST['patient'], $_POST['dt_cons'], $port['rapport']);
+	$consult = new Consultation($_POST['patient'], $_POST['dt_cons'], $_POST['rapport']);
 	$consDAO = new consultDAO_Impl;
 	$consDAO->persistConsult($consult);
 	safe_redirect('index.php?page=consult&action=list');

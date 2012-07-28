@@ -13,13 +13,14 @@
 		</div>		
 	</form>
 </div>
-
+<div class="util_btn" onclick="addRDV()">Ajouter un rendez vous</div>
 <div class="tablist_container">
 	<table id="list">
 		<thead>
 			<th>Patient</th>
 			<th>Date</th>
 			<th>Motif</th>
+			<th>&nbsp;</th>
 		</thead>
 
 		<tbody>
@@ -31,6 +32,7 @@
 				<td><?php echo $rdvs[$key]['nom'] . " " . $rdvs[$key]['prenom']; ?></td>
 				<td><?php echo $rdvs[$key]['date']; ?></td>
 				<td><?php echo $rdvs[$key]['motif']; ?></td>
+				<td><img src="images/del_icon.jpg" width="16" height="16" onclick="delRDV('<?php $rdvs[$key]['idrdv']; ?>')" /></td>
 			</tr>
 			<?php
 			}
@@ -58,4 +60,15 @@
 		popup = window.open('views/popups/patient_list.php', 'Selection du patient', 'width=720,height=480');
 	}
 
+	function addRDV(){
+		if(confirm("Passer a la fenetre d'ajout de rendez vous ?")){
+			window.location.href='index.php?page=rdv&action=add';
+		}
+	}
+	
+	function delRDV(id){
+		if(confirm("Etes vous sure de vouloir annuler ce rendez vous ?")){
+			window.location.href='index.php?page=rdv&action=del&id='+id;
+		}
+	}
 </script>

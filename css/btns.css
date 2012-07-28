@@ -18,3 +18,20 @@ img.pop_btn {
 	height: 24px;
 	display: inline;
 }
+
+.util_btn{
+	cursor: pointer;
+	width: 180px;
+	height: 25px;
+	margin: 5px 0 5px 20px;
+	text-align: center;
+	vertical-align: middle;
+	background: #EEEEEE;
+	border: solid black 1px;
+	border-radius: 4px;
+}
+
+.util_btn:hover{
+	cursor: hand;
+	background-color: #DDDDDD;
+}

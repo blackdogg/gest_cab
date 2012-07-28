@@ -13,13 +13,14 @@
 		</div>		
 	</form>
 </div>
-
+<div class="util_btn" onclick="addCON()">Ajouter une consultation</div>
 <div class="tablist_container">
 	<table id="list">
 		<thead>
 			<th>Patient</th>
 			<th>Date</th>
 			<th>Rapport</th>
+			<th>&nbsp;</th>
 		</thead>
 
 		<tbody>
@@ -31,6 +32,7 @@
 				<td><?php echo $consults[$key]['nom'] . " " . $consults[$key]['prenom']; ?></td>
 				<td><?php echo $consults[$key]['date']; ?></td>
 				<td><?php echo $consults[$key]['rapport']; ?></td>
+				<td style="width: 16px"><img src="images/del_icon.jpg" width="16" height="16" onclick="delCON('<?php $consults[$key]['idconsultation']; ?>')" /></td>
 			</tr>
 			<?php
 			}
@@ -42,9 +44,7 @@
 <script type="text/javascript">
 	$(document).ready(function() {
 		$("#dt").datepicker($.datepicker.regional['fr']);
-		$("#dt").datepicker({
-			dateFormat : 'yy-mm-dd'
-		});
+		$("#dt").datepicker("option", "dateFormat", "yy-mm-dd");
 	});
 
 	$("#list").dataTable({
@@ -58,5 +58,16 @@
 	function popSelectPatient() {
 		popup = window.open('views/popups/patient_list.php', 'Selection du patient', 'width=720,height=480');
 	}
-
+	
+	function addCON(){
+		if(confirm("Passer a la fenetre d'ajout de consultation ?")){
+			window.location.href='index.php?page=consult&action=add';
+		}
+	}
+	
+	function delCON(id){
+		if(confirm("Ete vous sure de vouloir supprimer cette consultation ?")){
+			window.location.href='index.php?page=exams&action=del&id'+id;
+		}
+	}
 </script>
