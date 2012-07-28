@@ -49,7 +49,12 @@
 		}
 		?>
 		<div id="header">
-			<div class="clear">&nbsp;</div>
+			<h1 class="big_title">Cabinet Medical de Cardiologie</h1>
+			<div class="line_separator">&nbsp;</div>
+			<h2 class="med_title">Docteur H.ADGHAR</h2>
+			<h3 class="small_title">Maladies du coeur et des vaisseaux</h3>
+			<div class="line_separator">&nbsp;</div>
+			<h2 class="med_title">Systeme de gestion</h2>
 		</div>
 
 		<div id="contentWrap">
@@ -102,6 +107,9 @@
 								<a href="index.php?page=exams&action=add">Ajouter</a>
 							</li>
 						</ul>-->
+					</li>
+					<li>
+						<a href="index.php?page=stats">Statistiques</a>
 					</li>
 				</ul>
 			</div>

@@ -10,10 +10,11 @@ h2.page_title{
 }
 
 #header{
-	margin: 0 auto;
+	margin: 5px auto;
 	width: 960px;
-	height: 100px;
-	background: #cacaca;
+	height: 150px;
+	background: #EEEEEE;
+	border-radius: 10px;
 }
 
 #contentWrap{
@@ -32,6 +33,32 @@ h2.page_title{
 #tmenu{
 	margin: 5px 0;
 	height: 45px;
+}
+
+.big_title{
+	margin: 0;
+	padding: 0;
+	width: auto;
+	text-align: center;
+}
+
+.med_title{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.small_title{
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+.line_separator{
+	width: auto;
+	height: 1px;
+	margin: 4px 0;
+	background-color: #AAAAAA;
 }
 
 .clear{

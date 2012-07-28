@@ -29,4 +29,26 @@ function dt_cons(id){
 		}
 	})
 }
+
+function dt_exams(id){
+	$.ajax({
+		method: 'GET',
+		url: 'ajax/exam_by_patient.php',
+		data: {'id': id},
+		success: function(data){
+			$("#detail_frm").html(data);
+		}
+	})
+}
+
+function dt_evo(id){
+	$.ajax({
+		method: 'GET',
+		url: 'ajax/evo_by_patient.php',
+		data: {'id': id},
+		success: function(data){
+			$("#detail_frm").html(data);
+		}
+	})
+}
 </script>

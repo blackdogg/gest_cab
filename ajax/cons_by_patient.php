@@ -1,22 +1,26 @@
 <?php
 include('../db.php');
-$nConsQuery = $db->query("SELECT COUNT(idconsultation) FROM consultation WHERE patient_idpatient=".$db->quote($_GET['id'],PDO::PARAM_STR));
-$consultationsQuery = $db->query("SELECT date, rapport FROM consultation WHERE patient_idpatient=".$db->quote($_GET['id'],PDO::PARAM_STR));
-$consults = $consultationsQuery->fetchAll(PDO::FETCH_ASSOC);
+//$nConsQuery = $db->query("SELECT COUNT(idconsultation) FROM consultation WHERE patient_idpatient=".$db->quote($_GET['id'],PDO::PARAM_STR));
+$evoQuery = $db->query("SELECT date, date_exam, rapport
+						FROM evolution						
+						WHERE patient_idpatient=".$db->quote($_GET['id'],PDO::PARAM_STR));
+$evos = $evoQuery->fetchAll(PDO::FETCH_ASSOC);
 ?>
 <table id="lstab">
 	<thead>
-		<th>Date consultation</th>
+		<th>Examen</th>
+		<th>Date de l'examen</th>
 		<th>Rapport</th>
 	</thead>
 	
 	<tbody>
 		<?php
-			foreach ($consults as $key => $cons) {
+			foreach ($exams as $key => $exam) {
 		?>
 		<tr>
-			<td><?php echo $consults[$key]['date']; ?></td>
-			<td><?php echo $consults[$key]['rapport']; ?></td>
+			<td><?php echo $exams[$key]['nom_exam']; ?></td>
+			<td><?php echo $exams[$key]['date_exam']; ?></td>
+			<td><?php echo $exams[$key]['rapport']; ?></td>
 		</tr>
 		<?php
 			}

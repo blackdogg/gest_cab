@@ -47,7 +47,7 @@
 <script type="text/javascript">	
 	$(document).ready(function() {
 		$("#dt_naiss").datepicker({
-			yearRange : "-120:-5",
+			yearRange : "-100:-2",
 			changeMonth : true,
 			changeYear : true
 		});

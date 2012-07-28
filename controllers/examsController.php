@@ -30,6 +30,7 @@ class examsController{
 				case 'del':
 					$this->action = 'del';
 					$this->dao->delExam($_GET['id']);
+					safe_redirect('index.php?page=exams&action=list');
 					break;
 				default :
 					break;

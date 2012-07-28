@@ -30,6 +30,7 @@ class consultController{
 				case 'del':
 					$this->action = 'del';
 					$this->dao->removeConsult($_GET['id']);
+					safe_redirect('index.php?page=consult&action=list');
 					break;		
 				default:								
 					break;

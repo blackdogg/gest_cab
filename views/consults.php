@@ -1,15 +1,18 @@
 <h2 class="page_title">Liste des consultations</h2>
 
 <div style="margin-bottom: 25px">
-	<form method="post" action="" id="filter_form_exam">
+	<form method="post" action="" name="filter_form_exam" id="filter_form_exam" onreset="clean()" onsubmit="check();">
 		<label for="nompatient">Nom :</label>
 		<input type="text" name="nompatient" id="nompatient" readonly="readonly"/>
 		<img class="pop_btn" src="images/patients-icon.gif" width="24" height="24" onclick="popSelectPatient()" />
 		<input type="hidden" name="patient" id="patient" />
-		<label for="date">Date :</label>
-		<input type="text" name="dt" id="dt" />
+		<label for="dt_from">Du :</label>
+		<input type="text" name="dt_from" id="dt_from" class="dt_input"/>
+		<label for="dt_to">Au :</label>
+		<input type="text" name="dt_to" id="dt_to" class="dt_input"/>
 		<div class="form_ctrl">
 			<input type="submit" name="ok" id="ok" value="Filtrer" />
+			<input type="reset" name="cancel" id="cancel" value="Effacer" />
 		</div>		
 	</form>
 </div>
@@ -43,8 +46,11 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#dt").datepicker($.datepicker.regional['fr']);
-		$("#dt").datepicker("option", "dateFormat", "yy-mm-dd");
+		$("#dt_from").datepicker($.datepicker.regional['fr']);
+		$("#dt_from").datepicker("option", "dateFormat", "yy-mm-dd");
+		
+		$("#dt_to").datepicker($.datepicker.regional['fr']);
+		$("#dt_to").datepicker("option", "dateFormat", "yy-mm-dd");
 	});
 
 	$("#list").dataTable({
@@ -54,6 +60,17 @@
 			"sUrl" : "js/lng/dataTables.french.json"
 		}
 	});
+	
+	function clean(){
+		document.filter_form_exam.patient.value = "";
+	}
+	
+	function check(){
+		if((document.filter_form_exam.dt_from.value != "") && (document.filter_form_exam.dt_to.value == "")){
+			alert("Veuillez entrez  deux dates.");
+			return;
+		}
+	}
 
 	function popSelectPatient() {
 		popup = window.open('views/popups/patient_list.php', 'Selection du patient', 'width=720,height=480');

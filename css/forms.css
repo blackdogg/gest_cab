@@ -52,7 +52,7 @@ form input[type="text"], input[type="date"] {
 	display: inline-block;
 	font-size: 1.3em;
 	font-weight: bold;
-	width: 30%;
+	width: 40%;
 }
 
 .fiche span.info{
@@ -84,4 +84,8 @@ form input[type="text"], input[type="date"] {
 #detail_frm{
 	width: 700px;
 	margin: 15px auto;
+}
+
+input[type=text].dt_input{
+	width: 80px !important;
 }

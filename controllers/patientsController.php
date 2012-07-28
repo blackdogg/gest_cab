@@ -23,6 +23,7 @@ class patientsController {
 					break;
 				case 'del' :
 					$this -> dao -> removePatient($_GET['id']);
+					safe_redirect('index.php?page=patients&action=list');
 					break;
 				case 'detail' :					
 					$p = $this->dao->getPatient($_GET['id']);

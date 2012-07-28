@@ -29,6 +29,8 @@ class rdvController{
 					$this->loadView('rdv_add', NULL);
 					break;
 				case 'del':
+					$this->dao->removeRDV($_GET['id']);
+					safe_redirect('index.php?page=rdv&action=list');
 					break;
 				default:
 					break;
