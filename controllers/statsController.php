@@ -24,19 +24,19 @@ class statsController {
 			$nCons = $consultQ -> fetchColumn();
 			$stats['ncons'] = $nCons;
 			
-			$ecgQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN ".$_POST['dt_from']." AND ".$_POST['dt_to']." AND type_exam_id=1");
+			$ecgQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN '".$_POST['dt_from']."' AND '".$_POST['dt_to']."' AND type_exam_id=1");
 			$nEcg = $ecgQ->fetchColumn();
 			$stats['ecg'] = $nEcg;
 			
-			$mapaQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN ".$_POST['dt_from']." AND ".$_POST['dt_to']." AND type_exam_id=2");
+			$mapaQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN '".$_POST['dt_from']."' AND '".$_POST['dt_to']."' AND type_exam_id=2");
 			$nMapa = $mapaQ->fetchColumn();
 			$stats['mapa'] = $nMapa;
 			
-			$edcQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN ".$_POST['dt_from']." AND ".$_POST['dt_to']." AND type_exam_id=3");
+			$edcQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN '".$_POST['dt_from']."' AND '".$_POST['dt_to']."' AND type_exam_id=3");
 			$nEdc = $edcQ->fetchColumn();
 			$stats['edc'] = $nEdc;
 			
-			$edvQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN ".$_POST['dt_from']." AND ".$_POST['dt_to']." AND type_exam_id=4");
+			$edvQ = $this->db->query("SELECT COUNT(id_ex) FROM patient_exam WHERE date_exam BETWEEN '".$_POST['dt_from']."' AND '".$_POST['dt_to']."' AND type_exam_id=4");
 			$nEdv = $edvQ->fetchColumn();
 			$stats['edv'] = $nEdv;
 			

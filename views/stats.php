@@ -16,7 +16,6 @@
 <div class="fiche">
 	<?php
 	if(!empty($stats)){
-		echo json_encode($stats);
 	?>
 	<span class="label">Nombre de consultations :</span><span class="info"><?php echo $stats['ncons']; ?></span>
 	<span class="label">Total examen :</span><span class="info"><?php echo $stats['total']; ?></span>
