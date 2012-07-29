@@ -16,6 +16,11 @@
 	border-radius: 8px;
 }
 
+.main_btn a{
+	text-decoration: none;
+	color: #000000;
+}
+
 img.pop_btn {
 	border: none;
 	width: 24px;

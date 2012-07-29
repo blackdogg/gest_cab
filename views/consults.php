@@ -6,10 +6,8 @@
 		<input type="text" name="nompatient" id="nompatient" readonly="readonly"/>
 		<img class="pop_btn" src="images/patients-icon.gif" width="24" height="24" onclick="popSelectPatient()" />
 		<input type="hidden" name="patient" id="patient" />
-		<label for="dt_from">Du :</label>
-		<input type="text" name="dt_from" id="dt_from" class="dt_input"/>
-		<label for="dt_to">Au :</label>
-		<input type="text" name="dt_to" id="dt_to" class="dt_input"/>
+		<label for="dt_from">Date :</label>
+		<input type="text" name="dt" id="dt"/>
 		<div class="form_ctrl">
 			<input type="submit" name="ok" id="ok" value="Filtrer" />
 			<input type="reset" name="cancel" id="cancel" value="Effacer" />
@@ -46,11 +44,8 @@
 </div>
 <script type="text/javascript">
 	$(document).ready(function() {
-		$("#dt_from").datepicker($.datepicker.regional['fr']);
-		$("#dt_from").datepicker("option", "dateFormat", "yy-mm-dd");
-		
-		$("#dt_to").datepicker($.datepicker.regional['fr']);
-		$("#dt_to").datepicker("option", "dateFormat", "yy-mm-dd");
+		$("#dt").datepicker($.datepicker.regional['fr']);
+		$("#dt").datepicker("option", "dateFormat", "yy-mm-dd");
 	});
 
 	$("#list").dataTable({
